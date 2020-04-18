@@ -1,0 +1,74 @@
+﻿@model serveurJDRMVC.Models.Personnage.Perso
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Perso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prenom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prenom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Definition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Definition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vivant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vivant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lvl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lvl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.posX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.posX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.posY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.posY)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

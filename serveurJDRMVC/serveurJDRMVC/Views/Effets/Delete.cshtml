@@ -1,0 +1,152 @@
+﻿@model serveurJDRMVC.Models.Effets.Effet
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Effet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChanceEffetBonus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChanceEffetBonus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TempsAvantEffetBonus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TempsAvantEffetBonus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Penetration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Penetration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinHit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinHit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxHit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxHit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DureMin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DureMin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DureMax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DureMax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoefStatUtil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoefStatUtil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoefStatReduc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoefStatReduc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cible)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CumulMax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CumulMax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChanceResist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChanceResist)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValeurBase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValeurBase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Drain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Drain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TailleDee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TailleDee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbDee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbDee)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

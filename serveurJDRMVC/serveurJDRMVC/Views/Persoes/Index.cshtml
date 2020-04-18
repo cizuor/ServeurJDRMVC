@@ -1,0 +1,69 @@
+﻿@model IEnumerable<serveurJDRMVC.Models.Personnage.Perso>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prenom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Definition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vivant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lvl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.posX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.posY)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prenom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Definition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vivant)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lvl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.posX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.posY)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

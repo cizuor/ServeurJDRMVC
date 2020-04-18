@@ -1,0 +1,83 @@
+﻿@model serveurJDRMVC.Models.Personnage.SousRace
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>SousRace</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nom, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Nom, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Nom, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Definition, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Definition, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Definition, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("labelRace", "Race", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("RaceCible", new SelectList(ViewBag.ListRace, "Id", "Nom"));
+        </div>
+    </div>
+
+    <h4>Race possible</h4>
+    @foreach (var item in Model.listRace)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+        </tr>
+    }
+
+    <h4>Stat</h4>
+    @for (int i = 0; i < Model.Stat.Count; i++)
+    {
+        @*@Html.HiddenFor(m => m.Stat[i].Id,new { htmlAttributes = new {@Value =ViewBag.ListStat[i].Id}} )*@
+        @Html.HiddenFor(m => m.Stat[i].Id)
+        <tr>
+            <td>
+                @Html.HiddenFor(m => m.Stat[i].Stat.Id)
+                @Html.DisplayFor(m => m.Stat[i].Stat.Nom)
+                @Html.EditorFor(m => m.Stat[i].Valeur)
+                <div></div>
+            </td>
+        </tr>
+    }
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
