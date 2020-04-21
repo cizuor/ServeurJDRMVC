@@ -174,6 +174,8 @@
     <Compile Include="Controllers\Personnage\PersoesController.cs" />
     <Compile Include="Controllers\RemplireBDD\ClassesController.cs" />
     <Compile Include="Controllers\RemplireBDD\DeeStatsController.cs" />
+    <Compile Include="Controllers\RemplireBDD\GenresController.cs" />
+    <Compile Include="Controllers\RemplireBDD\MaterielsController.cs" />
     <Compile Include="Controllers\RemplireBDD\RacesController.cs" />
     <Compile Include="Controllers\RemplireBDD\SousRacesController.cs" />
     <Compile Include="Controllers\RemplireBDD\StatsController.cs" />
@@ -269,10 +271,19 @@
     <Compile Include="Migrations\202004180832513_itemEffet_Nom.Designer.cs">
       <DependentUpon>202004180832513_itemEffet_Nom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004190909121_modifgenre.cs" />
+    <Compile Include="Migrations\202004190909121_modifgenre.Designer.cs">
+      <DependentUpon>202004190909121_modifgenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004210948588_effetlistGenreMatQual.cs" />
+    <Compile Include="Migrations\202004210948588_effetlistGenreMatQual.Designer.cs">
+      <DependentUpon>202004210948588_effetlistGenreMatQual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dal.cs" />
     <Compile Include="Models\Effets\Effet.cs" />
+    <Compile Include="Models\Effets\EffetActivable.cs" />
     <Compile Include="Models\Effets\EffetAppliquer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -425,6 +436,16 @@
     <Content Include="Views\Effets\Details.cshtml" />
     <Content Include="Views\Effets\Edit.cshtml" />
     <Content Include="Views\Effets\Index.cshtml" />
+    <Content Include="Views\Genres\Create.cshtml" />
+    <Content Include="Views\Genres\Delete.cshtml" />
+    <Content Include="Views\Genres\Details.cshtml" />
+    <Content Include="Views\Genres\Edit.cshtml" />
+    <Content Include="Views\Genres\Index.cshtml" />
+    <Content Include="Views\Materiels\Create.cshtml" />
+    <Content Include="Views\Materiels\Delete.cshtml" />
+    <Content Include="Views\Materiels\Details.cshtml" />
+    <Content Include="Views\Materiels\Edit.cshtml" />
+    <Content Include="Views\Materiels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -505,6 +526,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004180832513_itemEffet_Nom.resx">
       <DependentUpon>202004180832513_itemEffet_Nom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004190909121_modifgenre.resx">
+      <DependentUpon>202004190909121_modifgenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004210948588_effetlistGenreMatQual.resx">
+      <DependentUpon>202004210948588_effetlistGenreMatQual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

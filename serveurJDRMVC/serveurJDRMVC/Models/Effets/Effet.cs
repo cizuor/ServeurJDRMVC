@@ -1,4 +1,5 @@
-﻿using serveurJDRMVC.Models.Outil;
+﻿using serveurJDRMVC.Models.Objet;
+using serveurJDRMVC.Models.Outil;
 using serveurJDRMVC.Models.Personnage;
 using serveurJDRMVC.Models.Statistique;
 using System;
@@ -33,6 +34,7 @@ namespace serveurJDRMVC.Models.Effets
         public int Drain { get; set; }
         public int TailleDee { get; set; }
         public int NbDee { get; set; }
+        public List<EffetActivable> ListEffetActivables { get; set; }
 
 
 

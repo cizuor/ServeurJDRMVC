@@ -16,9 +16,6 @@ namespace serveurJDRMVC.Models.Objet
         public String Nom { get; set; }
         public String Definition { get; set; }
         public virtual List<ValeurQualiteStat> Stats { get; set; }
-        public virtual List<Effet> EffetAuToucher { get; set; }
-        public virtual List<Effet> EffetAuCrit { get; set; }
-        public virtual List<Effet> EffetDebutTour { get; set; }
-        public virtual List<Effet> EffetDebutCombat { get; set; }
+        public virtual List<EffetActivable> Effets { get; set; }
     }
 }

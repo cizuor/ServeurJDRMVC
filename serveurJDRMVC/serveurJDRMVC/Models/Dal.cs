@@ -1,4 +1,5 @@
 ﻿using serveurJDRMVC.Models.Effets;
+using serveurJDRMVC.Models.Objet;
 using serveurJDRMVC.Models.Personnage;
 using serveurJDRMVC.Models.Statistique;
 using serveurJDRMVC.ViewModel;
@@ -65,6 +66,11 @@ namespace serveurJDRMVC.Models
         {
             return db.Stats.ToList();
         }
+        public List<Effet> GetAllEffets()
+        {
+            return db.Effets.ToList();
+        }
+
 
         public User GetUserById(String idUser)
         {
@@ -99,7 +105,10 @@ namespace serveurJDRMVC.Models
             return db.Classes.FirstOrDefault(c => c.Id == idClasse);
         }
 
-
+        public Effet GetEffetById(int idEffet)
+        {
+            return db.Effets.FirstOrDefault(e => e.Id == idEffet); ;
+        }
 
 
         public void AddUser(User user)
@@ -252,6 +261,123 @@ namespace serveurJDRMVC.Models
             db.Entry(effet).State = EntityState.Modified;
             db.SaveChanges();
         }
+
+
+
+        public void AddGenre(Genre genre)
+        {
+
+
+            foreach (ValeurGenreStat s in genre.Stats)
+            {
+                s.Stat = GetAllStat().FirstOrDefault(sta => sta.Id == s.Stat.Id);
+                db.Entry(s.Stat).State = EntityState.Modified;
+            }
+
+            if (genre.Effets != null) 
+            {
+                foreach (EffetActivable effet in genre.Effets)
+                {
+                    db.Entry(effet.Effet).State = EntityState.Modified;
+                }
+            }
+
+
+            db.Genres.Add(genre);
+            db.SaveChanges();
+        }
+
+
+
+        public void MajGenre(Genre genre)
+        {
+            foreach (ValeurGenreStat s in genre.Stats)
+            {
+                s.Stat = GetAllStat().FirstOrDefault(sta => sta.Id == s.Stat.Id);
+                db.Entry(s.Stat).State = EntityState.Modified;
+            }
+
+            if (genre.Effets != null)
+            {
+                foreach (EffetActivable effet in genre.Effets)
+                {
+                    db.Entry(effet.Effet).State = EntityState.Modified;
+                }
+            }
+
+            db.Entry(genre).State = EntityState.Modified;
+            db.SaveChanges();
+        }
+
+
+        public void DeleteGenre(Genre genre)
+        {
+            foreach (ValeurGenreStat s in genre.Stats)
+            {
+                s.Stat = GetAllStat().FirstOrDefault(sta => sta.Id == s.Stat.Id);
+                genre.Stats.Remove(s);
+                db.Entry(s.Stat).State = EntityState.Modified;
+            }
+
+            if (genre.Effets != null)
+            {
+                foreach (EffetActivable effet in genre.Effets)
+                {
+                    db.Entry(effet.Effet).State = EntityState.Modified;
+                }
+                genre.Effets.Clear();
+            }
+
+            db.Genres.Remove(genre);
+            db.SaveChanges();
+        }
+
+
+
+
+        public void AddMateriel(Materiel mat)
+        {
+
+
+            foreach (ValeurMaterielStat s in mat.Stats)
+            {
+                s.Stat = GetAllStat().FirstOrDefault(sta => sta.Id == s.Stat.Id);
+                db.Entry(s.Stat).State = EntityState.Modified;
+            }
+
+            if (mat.Effets != null)
+            {
+                foreach (EffetActivable effet in mat.Effets)
+                {
+                    db.Entry(effet.Effet).State = EntityState.Modified;
+                }
+            }
+            db.Materiels.Add(mat);
+            db.SaveChanges();
+        }
+
+
+
+        public void MajMateriel(Materiel mat)
+        {
+            foreach (ValeurMaterielStat s in mat.Stats)
+            {
+                s.Stat = GetAllStat().FirstOrDefault(sta => sta.Id == s.Stat.Id);
+                db.Entry(s.Stat).State = EntityState.Modified;
+            }
+
+            if (mat.Effets != null)
+            {
+                foreach (EffetActivable effet in mat.Effets)
+                {
+                    db.Entry(effet.Effet).State = EntityState.Modified;
+                }
+            }
+
+            db.Entry(mat).State = EntityState.Modified;
+            db.SaveChanges();
+        }
+
 
 
 

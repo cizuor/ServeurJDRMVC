@@ -50,5 +50,9 @@ namespace serveurJDRMVC.Models
         public System.Data.Entity.DbSet<serveurJDRMVC.Models.Statistique.DeeStat> DeeStats { get; set; }
 
         public System.Data.Entity.DbSet<serveurJDRMVC.Models.Personnage.Perso> Persoes { get; set; }
+
+        public System.Data.Entity.DbSet<serveurJDRMVC.Models.Objet.Genre> Genres { get; set; }
+
+        public System.Data.Entity.DbSet<serveurJDRMVC.Models.Objet.Materiel> Materiels { get; set; }
     }
 }
